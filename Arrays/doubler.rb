@@ -8,9 +8,7 @@ def doubler(numbers)
     newnum << newnumbers
 
     i += 1
-
   end
-
   newnum
 end
 
