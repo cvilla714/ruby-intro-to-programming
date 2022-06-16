@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 def yell(words)
   yelled = []
 
   i = 0
   while i < words.length
     word = words[i]
-    yelled_word = word + '!'
+    yelled_word = "#{word}!"
     yelled << yelled_word
 
     i += 1
@@ -19,7 +21,7 @@ puts
 print yell(%w[code is cool]) # => ["code!", "is!", "cool!"]
 
 def yell_new_version(words)
-  words.map { |word| word + '!' }
+  words.map { |word| "#{word}!" }
 end
 
 puts
@@ -32,7 +34,7 @@ def yell_using_for_each(words)
   yelled = []
 
   words.each do |word|
-    yelled << word + '!'
+    yelled << "#{word}!"
   end
   yelled
 end

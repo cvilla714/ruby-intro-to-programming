@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def even_nums(max)
   evennum = []
   i = 0

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 def average_of_three(num1, num2, num3)
-	sum = num1 + num2 + num3
-  	average = sum/3.0
-  
+  sum = num1 + num2 + num3
+  average = sum / 3.0
 end
 
 puts average_of_three(3, 7, 8)   # => 6.0

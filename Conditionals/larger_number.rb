@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 def larger_number(num1, num2)
-    if num1 > num2
-      return num1
-    else
-      return num2
-    end
+  if num1 > num2
+    num1
+  else
+    num2
   end
-  
-  puts larger_number(42, 28)   # => 42
-  puts larger_number(99, 100)  # => 100
+end
+
+puts larger_number(42, 28)   # => 42
+puts larger_number(99, 100)  # => 100

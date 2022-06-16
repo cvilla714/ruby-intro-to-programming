@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def odd_range(min, max)
   oddn = []
   i = min

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def element_times_index(numbers)
   newnum = []
   i = 0

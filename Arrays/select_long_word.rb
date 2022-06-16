@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def select_long_words(words)
   long_words = []
 
@@ -44,7 +46,7 @@ print select_long_words_using_each(%w[keep coding]) # => ["coding"]
 puts
 
 def longest_word(words)
-  longest = words.sort_by { |word| word.length }.last
+  longest = words.max_by(&:length)
   new_logest = []
   words.each do |word|
     new_logest << word if word.length == longest.length

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 def factors_of(num)
   factnum = []
   i = 1
   while i <= num
     # if the variable numb can be divided by the counter then add it to the array
-    factnum << i if num % i == 0
+    factnum << i if (num % i).zero?
     i += 1
   end
 

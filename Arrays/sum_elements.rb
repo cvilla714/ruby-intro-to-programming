@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def sum_elements(arr1, arr2)
   new_arr = []
   i = 0
@@ -10,7 +12,7 @@ def sum_elements(arr1, arr2)
 end
 
 puts 'Simple version'
-print sum_elements([7, 4, 4], [3, 2, 11])                            # => [10, 6, 15]
+print sum_elements([7, 4, 4], [3, 2, 11]) # => [10, 6, 15]
 puts
 print sum_elements(%w[cat pizza boot], %w[dog pie camp]) # => ["catdog", "pizzapie", "bootcamp"]
 puts

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def select_odds(numbers)
   odd_numbers = []
   i = 0

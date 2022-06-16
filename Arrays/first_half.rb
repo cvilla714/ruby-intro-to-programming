@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def first_half(array)
   half = []
   i = 0

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def reverse_range(min, max)
   revnum = []
   i = max - 1

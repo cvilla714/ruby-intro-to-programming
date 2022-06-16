@@ -1,8 +1,9 @@
-def goodbye(name)
+# frozen_string_literal: true
 
-    "Bye " + name + "."
- end
- 
- puts goodbye("Daniel")   # => "Bye Daniel."
- puts goodbye("Mark")     # => "Bye Mark."
- puts goodbye("Beyonce")  # => "Bye Beyonce."
+def goodbye(name)
+  "Bye #{name}."
+end
+
+puts goodbye('Daniel')   # => "Bye Daniel."
+puts goodbye('Mark')     # => "Bye Mark."
+puts goodbye('Beyonce')  # => "Bye Beyonce."
