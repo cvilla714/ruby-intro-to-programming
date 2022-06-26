@@ -10,6 +10,7 @@ def two_d_translate(arr)
 end
 
 arr_1 = [
+    
   ['boot', 3],
   ['camp', 2],
   ['program', 0]
