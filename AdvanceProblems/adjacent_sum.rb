@@ -1,8 +1,8 @@
 def adjacent_sum(arr)
   new_arr = []
 
-  arr.each_with_index do |_ele, i|
-    new_arr << arr[i] + arr[i + 1] if i != arr.length - 1
+  arr.each_with_index do |ele, i|
+    new_arr << ele + arr[i + 1] if i != arr.length - 1
   end
 
   new_arr
