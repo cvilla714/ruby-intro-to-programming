@@ -12,11 +12,17 @@
 def my_rotate!(array, amt)
   if amt > 0
     amt.times do
-      array.unshift(array.pop)
+      # here we will be removing the elements at the begining of the array
+      ele = array.shift
+      # here we will be adding the elements at the end of the array
+      array.push(ele)
     end
   else
     amt.abs.times do
-      array.push(array.shift)
+      # here we will be removing the elements at the end of the array
+      ele = array.pop
+      # here we will be adding the elements at the beginning of the array
+      array.unshift(ele)
     end
   end
   array

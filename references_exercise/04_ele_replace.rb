@@ -11,6 +11,7 @@ def ele_replace!(array, hash)
   array
 end
 
+puts 'using only map!'
 array_1 = [4, 2, 0, 2]
 p array_1.object_id         # => 70119569670520
 result_1 = ele_replace!(array_1, { 2 => 'two', 0 => 'zero', 5 => 'five' })
@@ -20,5 +21,52 @@ p result_1.object_id        # => 70119569670520
 array_2 = %w[Matthias Simcha Mashu David]
 p array_2.object_id         # => 70119569668160
 result_2 = ele_replace!(array_2, 'Matthias' => 'J', 'Mashu' => 'D')
+p result_2                  # => ["J", "Simcha", "D", "David"]
+p result_2.object_id        # => 70119569668160
+puts
+
+def another_ele_replace!(array, hash)
+  # array.map! { |ele| hash[ele] }
+  array.map! do |ele|
+    if hash.has_key?(ele)
+      hash[ele]
+    else
+      ele
+    end
+  end
+  array
+end
+
+puts 'using condition to determine if hash has key'
+array_1 = [4, 2, 0, 2]
+p array_1.object_id         # => 70119569670520
+result_1 = another_ele_replace!(array_1, { 2 => 'two', 0 => 'zero', 5 => 'five' })
+p result_1                  # => [4, "two", "zero", "two"]
+p result_1.object_id        # => 70119569670520
+
+array_2 = %w[Matthias Simcha Mashu David]
+p array_2.object_id         # => 70119569668160
+result_2 = another_ele_replace!(array_2, 'Matthias' => 'J', 'Mashu' => 'D')
+p result_2                  # => ["J", "Simcha", "D", "David"]
+p result_2.object_id        # => 70119569668160
+
+def another_solution_ele_replace!(array, hash)
+  array.map! do |ele|
+    # hash.has_key?(ele) ? hash[ele] : ele
+    hash.key?(ele) ? hash[ele] : ele
+  end
+  array
+end
+
+puts 'using ternary operator'
+array_1 = [4, 2, 0, 2]
+p array_1.object_id         # => 70119569670520
+result_1 = another_solution_ele_replace!(array_1, { 2 => 'two', 0 => 'zero', 5 => 'five' })
+p result_1                  # => [4, "two", "zero", "two"]
+p result_1.object_id        # => 70119569670520
+
+array_2 = %w[Matthias Simcha Mashu David]
+p array_2.object_id         # => 70119569668160
+result_2 = another_solution_ele_replace!(array_2, 'Matthias' => 'J', 'Mashu' => 'D')
 p result_2                  # => ["J", "Simcha", "D", "David"]
 p result_2.object_id        # => 70119569668160
