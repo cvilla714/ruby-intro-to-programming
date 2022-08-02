@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def vowel_cipher(string)
   vowels = 'aeiou'
   string.split('').map do |char|

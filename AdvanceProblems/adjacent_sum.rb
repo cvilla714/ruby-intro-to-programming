@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def adjacent_sum(arr)
   new_arr = []
 

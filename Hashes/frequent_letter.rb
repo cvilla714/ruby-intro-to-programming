@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def frequent_letters(string)
   letter = Hash.new(0)
   string.each_char { |char| letter[char] += 1 }

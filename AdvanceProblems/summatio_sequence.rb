@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def summation(num)
   (1..num).inject(:+)
 end

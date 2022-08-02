@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, adult_in_group?(people), that accepts an array containing people.
 # The method should return true if there is at least 1 person with an age of 18 or greater.
 # The method should return false otherwise.

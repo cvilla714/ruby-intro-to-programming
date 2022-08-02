@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 def replace_letter(word)
   word.each_char.with_index do |char, i|
-    return word[i..-1] if char.match(/[aeiou]/)
+    return word[i..] if char.match(/[aeiou]/)
   end
 end
 
@@ -27,7 +29,7 @@ end
 def remove_first_consonant(word)
   vowels = 'aeiou'
   word.each_char.with_index do |char, i|
-    return word[i..-1] if vowels.include?(char)
+    return word[i..] if vowels.include?(char)
   end
 end
 

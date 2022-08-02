@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def is_valid_email(str)
   # here i am splitting the string into two parts using the @ symbol
   parts = str.split('@')

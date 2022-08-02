@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, compress_str(str), that accepts a string as an arg.
 # The method should return a new str where streaks of consecutive characters are compressed.
 # For example "aaabbc" is compressed to "3a2bc".

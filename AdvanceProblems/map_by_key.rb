@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def map_by_key(arr, key)
   arr.map { |ele| ele[key] }
 end

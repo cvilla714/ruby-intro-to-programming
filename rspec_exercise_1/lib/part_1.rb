@@ -18,7 +18,7 @@ end
 p repeat('hello', 3) #=> hellohellohello
 
 def yell(str)
-    str.upcase + '!'
+  "#{str.upcase}!"
 end
 
 puts yell('goodBYE') #=> GOODBYE

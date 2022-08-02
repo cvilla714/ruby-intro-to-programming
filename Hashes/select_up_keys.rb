@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def select_upcase_keys(hash)
   hash.select { |key, _value| key.upcase == key }
 end

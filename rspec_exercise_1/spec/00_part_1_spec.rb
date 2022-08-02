@@ -1,4 +1,3 @@
-# require 'part_1'
 require_relative '../lib/part_1'
 
 describe 'Part 1:' do

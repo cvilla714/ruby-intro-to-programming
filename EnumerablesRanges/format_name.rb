@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Hint: use str.upcase and str.downcase
 # "abc".upcase # => "ABC"
 
@@ -13,7 +15,7 @@ def another_format_name(str)
   new_parts = []
 
   parts.each do |part|
-    new_parts << part[0].upcase + part[1..-1].downcase
+    new_parts << part[0].upcase + part[1..].downcase
   end
 
   new_parts.join(' ')

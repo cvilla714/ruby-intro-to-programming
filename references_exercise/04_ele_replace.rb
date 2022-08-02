@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, ele_replace!(array, hash), that accepts an array and a hash as args.
 # The method should mutate the given array by replacing elements with their corresponding values in the hash.
 # The method should return the given array.
@@ -28,7 +30,7 @@ puts
 def another_ele_replace!(array, hash)
   # array.map! { |ele| hash[ele] }
   array.map! do |ele|
-    if hash.has_key?(ele)
+    if hash.key?(ele)
       hash[ele]
     else
       ele

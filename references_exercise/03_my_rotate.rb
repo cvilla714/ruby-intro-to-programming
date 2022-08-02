@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, my_rotate!(array, amt), that accepts an array and a number as args.
 # The method should mutate the array by rotating the elements 'amt' number of times.
 # When given a positive 'amt', a single rotation will rotate left, causing the first element to move to the last index
@@ -10,7 +12,7 @@
 # to be the same before and after calling your method.
 
 def my_rotate!(array, amt)
-  if amt > 0
+  if amt.positive?
     amt.times do
       # here we will be removing the elements at the begining of the array
       ele = array.shift

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def all_else_equal(arr)
   total = arr.sum
   average = total / 2

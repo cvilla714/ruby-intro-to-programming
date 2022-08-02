@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def last_index(str, char)
   #   str.split('').map.with_index { |letter, idx| print [letter, idx] }
   str.split('').map.with_index { |letter, idx| idx if letter.match(char) }.compact!.last

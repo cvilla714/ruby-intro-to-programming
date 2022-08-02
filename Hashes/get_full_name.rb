@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 def get_full_name(hash)
-  hash['first'] + ' ' + hash['last'] + ' ' + hash['title']
+  "#{hash['first']} #{hash['last']} #{hash['title']}"
 end
 
 hash1 = { 'first' => 'Michael', 'last' => 'Jordan', 'title' => 'GOAT' }

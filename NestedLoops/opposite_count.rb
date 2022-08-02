@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def opposite_count(nums)
   count = 0
   pairs = []
@@ -21,7 +23,7 @@ def another_opposite_count(nums)
 
   nums.each_with_index do |num1, idx1|
     nums.each_with_index do |num2, idx2|
-      count += 1 if num1 + num2 == 0 && idx2 > idx1
+      count += 1 if (num1 + num2).zero? && idx2 > idx1
     end
   end
 

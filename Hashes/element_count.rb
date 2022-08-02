@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def element_count(arr)
   count = Hash.new(0)
   arr.each { |element| count[element] += 1 }

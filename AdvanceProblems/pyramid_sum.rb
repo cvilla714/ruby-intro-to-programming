@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # For example, the base [1, 4, 6] gives us the following pyramid
 #     15
 #   5   10

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, filter_lengths(strings, length), that accepts an array of strings
 # and a length as args. The method should return an array containing the strings
 # that have at least the given length. The length argument should be optional; if no length

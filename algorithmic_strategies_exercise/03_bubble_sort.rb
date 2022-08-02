@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Reimplement the bubble sort outlined in the preceding lecture.
 # The bubble_sort method should accept an array of numbers and arrange the elements in increasing order.
 # The method should return the array.

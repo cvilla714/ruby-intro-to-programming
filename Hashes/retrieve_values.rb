@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 def retrieve_values(hash1, hash2, key)
   # puts hash1[key]
   # puts hash2[key]
-  return hash1[key], hash2[key] if hash1.has_key?(key) && hash2.has_key?(key)
+  return hash1[key], hash2[key] if hash1.key?(key) && hash2.key?(key)
 end
 
 dog1 = { 'name' => 'Fido', 'color' => 'brown' }

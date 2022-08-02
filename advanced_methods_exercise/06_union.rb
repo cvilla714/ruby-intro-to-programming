@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, union, that accepts any number of arrays as arguments.
 # The method should return an array containing all elements of the given arrays.
 

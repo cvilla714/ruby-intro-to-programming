@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def two_d_translate(arr)
   count = 0
   new_arr = []
@@ -10,7 +12,7 @@ def two_d_translate(arr)
 end
 
 arr_1 = [
-    
+
   ['boot', 3],
   ['camp', 2],
   ['program', 0]

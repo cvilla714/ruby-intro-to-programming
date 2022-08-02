@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, scalar_multiple!(array, multiplier), that accepts an array and a number as args.
 # The method should mutate the given array by multiplying all of the elements by the multiplier.
 # The method should return the given array.

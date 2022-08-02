@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 # Pig latin translation uses the following rules:
 # - for words that start with a vowel, add 'yay' to the end
 # - for words that start with a nonvowel, move all letters before the first vowel to the end of the word and add 'ay'
 
 def pig_latin_word(word)
   if word.match(/^[aeiou]/)
-    word + 'yay'
+    "#{word}yay"
   else
-    word[1..-1] + word[0] + 'ay'
+    "#{word[1..]}#{word[0]}ay"
   end
 end
 
@@ -18,10 +20,10 @@ puts pig_latin_word('trash')   # => "ashtray"
 def another_pig_latin(word)
   vowels = %w[a e i o u]
 
-  word + 'yay' if vowels.include?(word[0])
+  "#{word}yay" if vowels.include?(word[0])
 
   word.each_char.with_index do |char, idx|
-    return word[idx..-1] + word[0...idx] + 'ay' if vowels.include?(char)
+    return "#{word[idx..]}#{word[0...idx]}ay" if vowels.include?(char)
   end
 end
 
@@ -34,10 +36,10 @@ puts another_pig_latin('trash')   # => "ashtray"
 def new_pig_latin_word(word)
   vowels = 'aeiou'
 
-  return word + 'yay' if vowels.include?(word[0])
+  return "#{word}yay" if vowels.include?(word[0])
 
   word.each_char.with_index do |char, i|
-    return word[i..-1] + word[0...i] + 'ay' if vowels.include?(char)
+    return "#{word[i..]}#{word[0...i]}ay" if vowels.include?(char)
   end
 end
 

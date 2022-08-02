@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def abbreviate_sentence(sent)
   # first split the sentence into words
   words = sent.split(' ')
@@ -38,10 +40,8 @@ puts abbreviate('star') #=> str
 puts abbreviate_sentence('follow the yellow brick road') # => "fllw the yllw brck road"
 puts abbreviate_sentence('what a wonderful life')        # => "what a wndrfl life"
 
-
-
 def another_abbreviate_sentence(sent)
-  words = sent.split(" ")
+  words = sent.split(' ')
   new_words = []
 
   words.each do |word|
@@ -53,21 +53,19 @@ def another_abbreviate_sentence(sent)
     end
   end
 
-  return new_words.join(" ")
+  new_words.join(' ')
 end
 
 def another_abbreviate_word(word)
-  vowels = "aeiou"
-  new_word = ""
+  vowels = 'aeiou'
+  new_word = ''
 
   word.each_char do |char|
-    if !vowels.include?(char)
-      new_word += char
-    end
+    new_word += char unless vowels.include?(char)
   end
 
-  return new_word
+  new_word
 end
 
-puts another_abbreviate_sentence("follow the yellow brick road") # => "fllw the yllw brck road"
-puts another_abbreviate_sentence("what a wonderful life")        # => "what a wndrfl life"
+puts another_abbreviate_sentence('follow the yellow brick road') # => "fllw the yllw brck road"
+puts another_abbreviate_sentence('what a wonderful life')        # => "what a wndrfl life"

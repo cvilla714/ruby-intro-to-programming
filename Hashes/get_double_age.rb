@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def get_double_age(hash)
   hash.each do |key, value|
     # puts key

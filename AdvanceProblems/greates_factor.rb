@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 def factor(num)
   factors = []
   (1...num).each do |i|
     # print i
     # puts
     # this will shovel the numbers the imtes that the number is divisible by
-    factors << i if num % i == 0
+    factors << i if (num % i).zero?
   end
   # here we will take the max number of the factors
   factors.max

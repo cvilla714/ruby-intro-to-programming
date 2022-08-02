@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def double_letter_count(string)
   string.chars.each_with_object(Hash.new(0)) do |char, hash|
     hash[char] += 1

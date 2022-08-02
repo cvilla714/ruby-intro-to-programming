@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A name is valid is if satisfies all of the following:
 # - contains at least a first name and last name, separated by spaces
 # - each part of the name should be capitalized
@@ -32,7 +34,7 @@ def another_is_valid_name(str)
 end
 
 def another_is_capitalized(word)
-  if word[0] == word[0].upcase && word[1..-1] == word[1..-1].downcase
+  if word[0] == word[0].upcase && word[1..] == word[1..].downcase
     true
   else
     false

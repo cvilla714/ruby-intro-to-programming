@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, peak_finder(arr), that accepts an array of numbers as an arg.
 # The method should return an array containing all of "peaks" of the array.
 # An element is considered a "peak" if it is greater than both it's left and right neighbor.
@@ -20,7 +22,7 @@ def peak_finder(arr)
   arr.each_with_index do |middle, index|
     left = arr[index - 1]
     right = arr[index + 1]
-    if index == 0 && middle > right
+    if index.zero? && middle > right
       peaks << middle
     elsif index == arr.length - 1 && middle > left
       peaks << middle

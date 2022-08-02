@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 def fibonacci(length)
   fib = [0, 1]
-  if length == 0
+  case length
+  when 0
     return []
-  elsif length == 1
+  when 1
     return [1]
   else
     fib << fib[-1] + fib[-2] while fib.length <= length

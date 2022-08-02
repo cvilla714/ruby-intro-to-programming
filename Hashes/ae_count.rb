@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def ae_count(str)
   count = Hash.new(0)
   str.each_char { |char| count[char] += 1 if %w[a e].include?(char) }

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def element_replace(arr, hash)
   new_arr = []
   arr.each do |ele|

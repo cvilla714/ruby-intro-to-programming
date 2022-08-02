@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def rotate_array(arr, num)
   num.times do
     arr.unshift(arr.pop)

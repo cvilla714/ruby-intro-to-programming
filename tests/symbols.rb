@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 roles = %i[
   all_rights
   accomodation_manage

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Hint: all keys of a hash are automatically unique
 
 def unique_elements(arr)

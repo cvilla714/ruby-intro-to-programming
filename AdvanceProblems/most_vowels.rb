@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def count_vowels(word)
   vowels = %w[a e i o u]
   counter = 0

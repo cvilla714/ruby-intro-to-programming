@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def hash_to_pairs(hash)
   new_arr = []
   hash.each { |key, val| new_arr << [key, val] }

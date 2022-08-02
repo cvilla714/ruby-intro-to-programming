@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, max_inject(arr), that accepts any amount of numbers arguments and returns
 # the largest number. Solve this using the built-in inject.
 

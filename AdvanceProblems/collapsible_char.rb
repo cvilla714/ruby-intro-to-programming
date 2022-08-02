@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def same_char_collapse(str)
   reducible = true
 
@@ -19,7 +21,7 @@ def same_char_collapse(str)
   str
 end
 
-puts same_char_collapse('zzzxaaxy')   #=> "zy"
+puts same_char_collapse('zzzxaaxy') #=> "zy"
 # because zzzxaaxy -> zxaaxy -> zxxy -> zy
 
 puts same_char_collapse('uqrssrqvtt') #=> "uv"

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def hipsterfy(string)
   # here i am getting the last vowel in the string
   last_vowels_index = string.rindex(/[aeiou]/)

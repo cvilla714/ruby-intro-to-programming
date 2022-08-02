@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def two_d_sum(arr)
   count = 0
   arr.each do |row|

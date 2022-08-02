@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, coprime?(num_1, num_2), that accepts two numbers as args.
 # The method should return true if the only common divisor between the two numbers is 1.
 # The method should return false otherwise. For example coprime?(25, 12) is true because
@@ -5,7 +7,7 @@
 
 def coprime?(num_1, num_2)
   (2..num_1).each do |num|
-    return false if num_1 % num == 0 && num_2 % num == 0
+    return false if (num_1 % num).zero? && (num_2 % num).zero?
   end
 
   true
@@ -19,7 +21,7 @@ p coprime?(6, 24)     # => false
 puts
 
 def another_coprime?(num_1, num_2)
-  (2..num_1).none? { |num| num_1 % num == 0 && num_2 % num == 0 }
+  (2..num_1).none? { |num| (num_1 % num).zero? && (num_2 % num).zero? }
 end
 
 puts 'using none?'

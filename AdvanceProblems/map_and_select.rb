@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 arr = %w[apple bootCAMP caRrot DaNcE]
 
-new_arr = arr.map { |word| word.capitalize }
+new_arr = arr.map(&:capitalize)
 print new_arr
 puts
 

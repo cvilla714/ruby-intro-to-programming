@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def array_translate(array)
   new_word = ''
   array.each_with_index do |word, idx|

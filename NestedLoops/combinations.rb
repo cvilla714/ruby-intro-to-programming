@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def combinations(arr)
   new_list = []
   arr.each_with_index do |first_ele, idx1|

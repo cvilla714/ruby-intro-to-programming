@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def perfect_square?(num)
   (1..num).each do |i|
     return true if i * i == num

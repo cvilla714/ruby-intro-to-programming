@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Feel free to use this variable:
 # alphabet = "abcdefghijklmnopqrstuvwxyz"
 

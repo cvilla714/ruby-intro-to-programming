@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def map_by_name(arr)
   arr.map { |item| item['name'] }
 end

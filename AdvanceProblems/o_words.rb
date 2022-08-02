@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def o_words(sentence)
   #   sentence.split(' ').map { |word| word.include?('o') }
   sentence.split(' ').select { |word| word.include?('o') }

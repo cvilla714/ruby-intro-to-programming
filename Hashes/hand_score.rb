@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def hand_score(hand)
   score = { 'A' => 4, 'K' => 3, 'Q' => 2, 'J' => 1, 'a' => 4, 'k' => 3, 'q' => 2, 'j' => 1 }
   hand.split('').map { |card| score[card] }.sum

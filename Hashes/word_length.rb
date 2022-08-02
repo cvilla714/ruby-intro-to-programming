@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def word_lengths(sentence)
   words = sentence.split
 

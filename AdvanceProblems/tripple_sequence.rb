@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def three_times(num)
   num * 3
 end

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 def prime?(num)
   return false if num < 2
 
   (2...num).each do |i|
-    return false if num % i == 0
+    return false if (num % i).zero?
   end
   true
 end
@@ -10,7 +12,7 @@ end
 def prime_factors(num)
   factors = []
   (2...num).each do |i|
-    factors << i if num % i == 0
+    factors << i if (num % i).zero?
   end
   factors.select { |item| prime?(item) }
 end

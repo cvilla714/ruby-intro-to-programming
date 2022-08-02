@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def anagrams?(word1, word2)
   word1.chars.sort == word2.chars.sort
 end
@@ -12,7 +14,7 @@ def another_anagrams?(word1, word2)
   count = Hash.new(0)
   word1.chars.each { |char| count[char] += 1 }
   word2.chars.each { |char| count[char] -= 1 }
-  count.values.all? { |value| value == 0 }
+  count.values.all?(&:zero?)
 end
 
 puts 'another_anagrams'

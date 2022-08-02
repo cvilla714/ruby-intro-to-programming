@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, replace_char_at!(str, char, idx), that accepts a string, character, and an index as arguments.
 # The method should mutate the str by replacing the given idx of the str with the char. The method
 # should return the str.

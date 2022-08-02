@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def reverse_words(sent)
   #   sent.split.map { |word| word.reverse }.join(' ')
   sent.split.map(&:reverse).join(' ')

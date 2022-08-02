@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 def prime?(num)
   return false if num < 2
 
   (2..Math.sqrt(num)).each do |i|
-    return false if num % i == 0
+    return false if (num % i).zero?
   end
   true
 end
@@ -19,7 +21,7 @@ def another_prime?(num)
   return false if num < 2
 
   (2...num).each do |i|
-    return false if num % i == 0
+    return false if (num % i).zero?
   end
   true
 end
@@ -37,7 +39,7 @@ def third_prime(num)
   return false if num < 2
 
   (2...num).map do |item|
-    return false if num % item == 0
+    return false if (num % item).zero?
   end
   true
 end

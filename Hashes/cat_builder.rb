@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def cat_builder(name_str, color_str, age_num)
   { 'name' => name_str, 'color' => color_str, 'age' => age_num }
 end

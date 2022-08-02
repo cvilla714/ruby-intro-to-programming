@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, is_sorted(arr), that accepts an array of numbers as an arg.
 # The method should return true if the elements are in increasing order, false otherwise.
 # Do not use the built-in Array#sort in your solution :)

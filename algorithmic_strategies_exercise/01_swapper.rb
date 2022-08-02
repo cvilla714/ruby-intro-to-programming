@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Write a method, swapper(arr, idx_1, idx_2), that accepts an array and two indices as args.
 # The method should swap the elements at the given indices and return the array.
 # The method should modify the existing array and not create a new array.

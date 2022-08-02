@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 def is_prime?(num)
   return false if num < 2
 
   (2...num).each do |i|
-    return false if num % i == 0
+    return false if (num % i).zero?
   end
   true
 end
