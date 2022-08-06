@@ -65,11 +65,25 @@ def power_of_two?(number)
   number.to_s(2).count('1') == 1
 end
 
+puts 'using some built-in methods'
 p power_of_two?(16)
 p power_of_two?(32)
 p power_of_two?(64)
 p power_of_two?(100)
 p power_of_two?(28)
+
+def another_power_of_two?(number)
+  product = 1
+  product *= 2 while product < number
+  product == number
+end
+
+puts 'using while loop'
+p another_power_of_two?(16)
+p another_power_of_two?(32)
+p another_power_of_two?(64)
+p another_power_of_two?(100)
+p another_power_of_two?(28)
 
 # puts lava.gsub(/[aeiou]/, '*')
 
@@ -83,3 +97,7 @@ puts 'Gosh'.gsub!(/[aeiou]/, '*')
 puts 'darn'.gsub!(/[aeiou]/, '*')
 puts 'it'.gsub!(/[aeiou]/, '*')
 puts 'DOOR'.gsub!(/[aeiou]/i, '*')
+puts 'testsing'
+ignored_words = %w[AND THE OF IN FOR]
+puts 'roxy@putsbox.com'.gsub(/[^A-Za-z ]/, '').upcase.split.delete_if { |x| ignored_words.include?(x) }
+# string_array = stripped_name.upcase.split.delete_if { |x| ignored_words.include?(x) }
