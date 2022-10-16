@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 def some?(array, &prc)
-    array.each do |el|
-        return true if prc.call(el)
-    end
-    false
+  array.each do |el|
+    return true if prc.call(el)
+  end
+  false
 end
 
 # p some?([3, 1, 11, 5]) { |n| n.even? }                                # false
@@ -12,13 +14,12 @@ end
 # p some?(['squash', 'corn', 'kale', 'potato']) { |str| str[0] == 'p' } # true
 # p some?(['parsnip', 'lettuce', 'pea']) { |str| str[0] == 'p' }        # true
 
-
 def exactly?(array, n, &prc)
-    count = 0
-    array.each do |el|
-        count += 1 if prc.call(el)
-    end
-    count == n
+  count = 0
+  array.each do |el|
+    count += 1 if prc.call(el)
+  end
+  count == n
 end
 
 # p exactly?(['A', 'b', 'C'], 2) { |el| el == el.upcase }         # true
@@ -32,11 +33,11 @@ end
 # p exactly?([42, -9, 7, -3, -6], 2) { |n| n > 0 }                # true
 
 def filter_out(array, &prc)
-    filtered = []
-    array.each do |el|
-        filtered << el if prc.call(el) == false
-    end
-    filtered
+  filtered = []
+  array.each do |el|
+    filtered << el if prc.call(el) == false
+  end
+  filtered
 end
 
 # p filter_out([10, 6, 3, 2, 5 ]) { |x| x.odd? }      # [10, 6, 2]
@@ -44,13 +45,12 @@ end
 # p filter_out([10, 6, 3, 2, 5 ]) { |x| x.even? }     # [3, 5]
 # p filter_out([1, 7, 3, 5 ]) { |x| x.even? }         # [1, 7, 3, 5]
 
-
 def at_least?(array, n, &prc)
-    count = 0
-    array.each do |el|
-        count += 1 if prc.call(el)
-    end
-    count >= n
+  count = 0
+  array.each do |el|
+    count += 1 if prc.call(el)
+  end
+  count >= n
 end
 
 # p at_least?(['sad', 'quick', 'timid', 'final'], 2) { |s| s.end_with?('ly') }
@@ -74,12 +74,11 @@ end
 # p at_least?([true, true, true, true], 3) { |bool| bool }
 # # true
 
-
 def every?(array, &prc)
-    array.each do |el|
-        return false if !prc.call(el)
-    end
-    true
+  array.each do |el|
+    return false unless prc.call(el)
+  end
+  true
 end
 
 # p every?([3, 1, 11, 5]) { |n| n.even? }                                 # false
@@ -89,13 +88,12 @@ end
 # p every?(['squash', 'pea', 'kale', 'potato']) { |str| str[0] == 'p' }   # false
 # p every?(['parsnip', 'potato', 'pea']) { |str| str[0] == 'p' }          # true
 
-
 def at_most?(array, n, &prc)
-    count = 0
-    array.each do |el|
-        count += 1 if prc.call(el)
-    end
-    count <= n
+  count = 0
+  array.each do |el|
+    count += 1 if prc.call(el)
+  end
+  count <= n
 end
 
 # p at_most?([-4, -100, -3], 1) { |el| el > 0 }                        # true
@@ -106,12 +104,11 @@ end
 # p at_most?(['r', 'i', 'e', 'z'], 2) { |el| 'aeiou'.include?(el) }    # true
 # p at_most?(['r', 'i', 'e', 'o'], 2) { |el| 'aeiou'.include?(el) }    # false
 
-
 def first_index(array, &prc)
-    array.each_with_index do |el, i|
-        return i if prc.call(el)
-    end
-    nil
+  array.each_with_index do |el, i|
+    return i if prc.call(el)
+  end
+  nil
 end
 
 # p first_index(['bit', 'cat', 'byte', 'below']) { |el| el.length > 3 }           # 2
@@ -121,13 +118,12 @@ end
 # p first_index(['bit', 'cat', 'byte', 'below']) { |el| el.include?('a') }        # 1
 # p first_index(['bit', 'cat', 'byte', 'below']) { |el| el[0] == 't' }            # nil
 
-
 def xnor_select(array, prc1, prc2)
-    selected = []
-    array.each do |el|
-        selected << el if prc1.call(el) == prc2.call(el)
-    end
-    selected
+  selected = []
+  array.each do |el|
+    selected << el if prc1.call(el) == prc2.call(el)
+  end
+  selected
 end
 
 # is_even = Proc.new { |n| n % 2 == 0 }
@@ -137,9 +133,8 @@ end
 # p xnor_select([-7, -13, 12, 5, -10], is_even, is_positive)  # [-7, -13, 12]
 # p xnor_select([-7, -13, 12, 5, -10], is_odd, is_positive)   # [5, -10]
 
-
 def filter_out!(array, &prc)
-    array.uniq.each { |el| array.delete(el) if prc.call(el) }
+  array.uniq.each { |el| array.delete(el) if prc.call(el) }
 end
 
 # arr_1 = [10, 6, 3, 2, 5 ]
@@ -158,14 +153,13 @@ end
 # filter_out!([1, 7, 3, 5 ]) { |x| x.even? }
 # p arr_4 # [1, 7, 3, 5]
 
-
 def multi_map(array, n = 1, &prc)
-    mapped = []
-    array.each do |el|
-        n.times { el = prc.call(el) }
-        mapped << el
-    end
-    mapped
+  mapped = []
+  array.each do |el|
+    n.times { el = prc.call(el) }
+    mapped << el
+  end
+  mapped
 end
 
 # p multi_map(['pretty', 'cool', 'huh?']) { |s| s + '!'}   # ["pretty!", "cool!", "huh?!"]
@@ -175,30 +169,28 @@ end
 # p multi_map([4, 3, 2, 7], 2) { |num| num * 10 }             # [400, 300, 200, 700]
 # p multi_map([4, 3, 2, 7], 4) { |num| num * 10 }             # [40000, 30000, 20000, 70000]
 
-
 def proctition(array, &prc)
-    trues = []
-    falses = []
-    array.each do |el|
-        if prc.call(el)
-            trues << el
-        else
-            falses << el
-        end
+  trues = []
+  falses = []
+  array.each do |el|
+    if prc.call(el)
+      trues << el
+    else
+      falses << el
     end
-    [ *trues, *falses ]
+  end
+  [*trues, *falses]
 end
 
 # p proctition([4, -5, 7, -10, -2, 1, 3]) { |el| el > 0 }                 # [4, 7, 1, 3, -5, -10, -2]
 # p proctition([7, 8, 3, 6, 10]) { |el| el.even? }                        # [8, 6, 10, 7, 3]
 # p proctition(['cat','boot', 'dog', 'bug', 'boat']) { |s| s[0] == 'b' }  # ["boot", "bug", "boat", "cat", "dog"]
 
-
 def selected_map!(array, selector, mapper)
-    array.each_with_index do |el, i|
-        array[i] = mapper.call(el) if selector.call(el)
-    end
-    nil
+  array.each_with_index do |el, i|
+    array[i] = mapper.call(el) if selector.call(el)
+  end
+  nil
 end
 
 # is_even = Proc.new { |n| n.even? }
@@ -218,9 +210,8 @@ end
 # p selected_map!(arr_3, is_positive, square) # nil
 # p arr_3                                     # [-10, 16, 49, 36, -2, -9]
 
-
 def chain_map(val, prcs)
-    prcs.inject(val) { |accum, prc| prc.call(accum) }
+  prcs.inject(val) { |accum, prc| prc.call(accum) }
 end
 
 # add_5 = Proc.new { |n| n + 5 }
@@ -233,18 +224,17 @@ end
 # p chain_map(4, [square, half])          # 8
 # p chain_map(4, [half, square])          # 4
 
-
 def proc_suffix(sentence, suffixes)
-    words = sentence.split(' ')
-    new_words = []
-    words.each do |word|
-        new_word = word
-        suffixes.each do |prc, suffix|
-            new_word += suffix if prc.call(word)
-        end
-        new_words << new_word
+  words = sentence.split(' ')
+  new_words = []
+  words.each do |word|
+    new_word = word
+    suffixes.each do |prc, suffix|
+      new_word += suffix if prc.call(word)
     end
-    new_words.join(' ')
+    new_words << new_word
+  end
+  new_words.join(' ')
 end
 
 # contains_a = Proc.new { |w| w.include?('a') }
@@ -273,19 +263,18 @@ end
 #     three_letters => 'o'
 # )   # "fooding gladingly rantingly dogo catlyo"
 
-
 def proctition_platinum(array, *prcs)
-    partition = {}
-    prcs.each_index { |i| partition[i + 1] = [] }
-    array.each do |el|
-        prcs.each_with_index do |prc, i|
-            if prc.call(el)
-                partition[i + 1] << el
-                break
-            end
-        end
+  partition = {}
+  prcs.each_index { |i| partition[i + 1] = [] }
+  array.each do |el|
+    prcs.each_with_index do |prc, i|
+      if prc.call(el)
+        partition[i + 1] << el
+        break
+      end
     end
-    partition
+  end
+  partition
 end
 
 # is_yelled = Proc.new { |s| s[-1] == '!' }
@@ -302,17 +291,16 @@ end
 # p proctition_platinum(['WHO', 'what', 'when!', 'WHERE!', 'how', 'WHY'], begins_w, is_upcase, is_yelled, contains_a)
 # # {1=>["WHO", "what", "when!", "WHERE!", "WHY"], 2=>[], 3=>[], 4=>[]}
 
-
 def procipher(sentence, cipher)
-    words = sentence.split(' ')
-    new_words = words.map do |word|
-        new_word = word
-        cipher.each do |checker, changer|
-            new_word = changer.call(new_word) if checker.call(word)
-        end
-        new_word
+  words = sentence.split(' ')
+  new_words = words.map do |word|
+    new_word = word
+    cipher.each do |checker, changer|
+      new_word = changer.call(new_word) if checker.call(word)
     end
-    new_words.join(' ')
+    new_word
+  end
+  new_words.join(' ')
 end
 
 # is_yelled = Proc.new { |s| s[-1] == '!' }
@@ -349,21 +337,20 @@ end
 #     contains_a => make_question
 # ) # "STOP:) that??? taxi??? !won"
 
-
 def picky_procipher(sentence, cipher)
-    words = sentence.split(' ')
-    new_words = words.map do |word|
-        key_procs = cipher.keys
-        matches = key_procs.select { |prc| prc.call(word) }
-        if matches.length >= 1
-            key_proc = matches.first
-            value_proc = cipher[key_proc]
-            value_proc.call(word)
-        else
-            word
-        end
+  words = sentence.split(' ')
+  new_words = words.map do |word|
+    key_procs = cipher.keys
+    matches = key_procs.select { |prc| prc.call(word) }
+    if matches.length >= 1
+      key_proc = matches.first
+      value_proc = cipher[key_proc]
+      value_proc.call(word)
+    else
+      word
     end
-    new_words.join(' ')
+  end
+  new_words.join(' ')
 end
 
 # is_yelled = Proc.new { |s| s[-1] == '!' }

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/hangman'
 
 puts "\nNOTE: Once you complete all specs, run `ruby lib/play_hangman.rb` in your terminal!"

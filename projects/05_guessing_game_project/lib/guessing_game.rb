@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GuessingGame
   def initialize(min, max)
     @min = min

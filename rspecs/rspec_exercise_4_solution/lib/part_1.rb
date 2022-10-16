@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 def my_reject(array, &prc)
   new_array = []
 
   array.each do |el|
-    new_array << el if !prc.call(el)
+    new_array << el unless prc.call(el)
   end
 
   new_array

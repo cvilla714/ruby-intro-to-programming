@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/half_and_double'
 
 describe 'half_and_double' do

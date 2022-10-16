@@ -1,12 +1,14 @@
-require "set"
-require_relative "player"
+# frozen_string_literal: true
+
+require 'set'
+require_relative 'player'
 
 class GhostGame
-  ALPHABET = Set.new("a".."z")
+  ALPHABET = Set.new('a'..'z')
   MAX_LOSS_COUNT = 5
 
   def initialize(*players)
-    words = File.readlines("dictionary.txt").map(&:chomp)
+    words = File.readlines('dictionary.txt').map(&:chomp)
     @dictionary = Set.new(words)
     @players = players
     @losses = Hash.new { |losses, player| losses[player] = 0 }
@@ -18,7 +20,7 @@ class GhostGame
   end
 
   private
-  
+
   attr_reader :fragment, :dictionary, :losses, :players
 
   def game_over?
@@ -26,7 +28,7 @@ class GhostGame
   end
 
   def play_round
-    @fragment = ""
+    @fragment = ''
     welcome
 
     until round_over?
@@ -80,24 +82,24 @@ class GhostGame
   end
 
   def winner
-    (player, _) = losses.find { |_, losses| losses < MAX_LOSS_COUNT }
+    (player,) = losses.find { |_, losses| losses < MAX_LOSS_COUNT }
     player
   end
 
   def record(player)
     count = losses[player]
-    "GHOST".slice(0, count)
+    'GHOST'.slice(0, count)
   end
 
   # UI methods (display game status and prompts to players)
   def welcome
-    system("clear")
+    system('clear')
     puts "Let's play a round of Ghost!"
     display_standings
   end
 
   def take_turn
-    system("clear")
+    system('clear')
     puts "It's #{current_player}'s turn!"
     letter = nil
 
@@ -115,7 +117,7 @@ class GhostGame
   end
 
   def display_standings
-    puts "Current standings:"
+    puts 'Current standings:'
 
     players.each do |player|
       puts "#{player}: #{record(player)}"
@@ -125,7 +127,7 @@ class GhostGame
   end
 
   def update_standings
-    system("clear")
+    system('clear')
     puts "#{previous_player} spelled #{fragment}."
     puts "#{previous_player} gets a letter!"
     sleep(1)
@@ -134,20 +136,20 @@ class GhostGame
       puts "#{previous_player} has been eliminated!"
       sleep(1)
     end
-    
+
     losses[previous_player] += 1
-    
+
     display_standings
   end
 end
 
 if $PROGRAM_NAME == __FILE__
   game = GhostGame.new(
-    Player.new("Gizmo"), 
-    Player.new("Breakfast"), 
-    Player.new("Toby"),
-    Player.new("Leonardo")
-    )
+    Player.new('Gizmo'),
+    Player.new('Breakfast'),
+    Player.new('Toby'),
+    Player.new('Leonardo')
+  )
 
   game.run
 end

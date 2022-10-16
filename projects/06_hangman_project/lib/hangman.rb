@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Hangman
-  DICTIONARY = %w[cat dog bootcamp pizza]
+  DICTIONARY = %w[cat dog bootcamp pizza].freeze
   def self.random_word
     DICTIONARY.sample
   end
@@ -62,7 +64,7 @@ class Hangman
   end
 
   def lose?
-    if @remaining_incorrect_guesses == 0
+    if @remaining_incorrect_guesses.zero?
       puts 'LOSE'
       true
     else

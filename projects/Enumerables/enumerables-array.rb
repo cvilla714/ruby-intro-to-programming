@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Array
   def my_each(&prc)
     length.times do |i|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def zip(*arrays)
   length = arrays.first.length
 

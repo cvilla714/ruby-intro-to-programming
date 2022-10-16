@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/exercise'
 
 describe 'zip' do
@@ -33,8 +35,8 @@ describe 'zip' do
 end
 
 describe 'prizz_proc' do
-  let(:div_3) { proc { |n| n % 3 == 0 } }
-  let(:div_5) { proc { |n| n % 5 == 0 } }
+  let(:div_3) { proc { |n| (n % 3).zero? } }
+  let(:div_5) { proc { |n| (n % 5).zero? } }
   let(:ends_ly) { proc { |s| s.end_with?('ly') } }
   let(:has_i) { proc { |s| s.include?('i') } }
 
@@ -126,23 +128,23 @@ end
 describe 'maximum' do
   it 'should accept an array and a block as args' do
     expect { maximum([2, 4, -5, 1]) { |n| n * n } }.to_not raise_error
-    expect { maximum(%w[potato swimming cat]) { |w| w.length } }.to_not raise_error
+    expect { maximum(%w[potato swimming cat], &:length) }.to_not raise_error
   end
 
   it 'should return the element that has the largest result when passed into the block' do
     expect(maximum([2, 4, -5, 1]) { |n| n * n }).to eq(-5)
-    expect(maximum(%w[potato swimming cat]) { |w| w.length }).to eq('swimming')
+    expect(maximum(%w[potato swimming cat], &:length)).to eq('swimming')
   end
 
   context 'when there is a tie' do
     it 'should return the element that appears later in the array' do
-      expect(maximum(%w[boot cat drop]) { |w| w.length }).to eq('drop')
+      expect(maximum(%w[boot cat drop], &:length)).to eq('drop')
     end
   end
 
   context 'when the array is empty' do
     it 'should return nil' do
-      expect(maximum([]) { |w| w.length }).to eq(nil)
+      expect(maximum([], &:length)).to eq(nil)
     end
   end
 end
@@ -152,17 +154,17 @@ describe 'my_group_by' do
   let(:array_2) { [1, 2, 9, 30, 11, 38] }
 
   it 'should accept an array and a block as args' do
-    expect { my_group_by(array_1) { |s| s.length } }.to_not raise_error
+    expect { my_group_by(array_1, &:length) }.to_not raise_error
   end
 
   it 'should not use the built-in Array#group_by' do
     expect(array_1).to_not receive(:group_by)
-    my_group_by(array_1) { |s| s.length }
+    my_group_by(array_1, &:length)
   end
 
   it 'should return a hash where keys are the results when the elements are given to the block' do
     answer_1 = { 5 => ['mouse'], 3 => %w[dog cat], 4 => %w[goat bird] }
-    expect(my_group_by(array_1) { |s| s.length }.keys).to match_array(answer_1.keys)
+    expect(my_group_by(array_1, &:length).keys).to match_array(answer_1.keys)
 
     answer_2 = { true => %w[mouse dog goat], false => %w[bird cat] }
     expect(my_group_by(array_1) { |s| s.include?('o') }.keys).to match_array(answer_2.keys)
@@ -170,7 +172,7 @@ describe 'my_group_by' do
 
   it 'should return a hash where each value is an array containing the elements that result in the corresponding key when given to the block' do
     answer_1 = { 5 => ['mouse'], 3 => %w[dog cat], 4 => %w[goat bird] }
-    expect(my_group_by(array_1) { |s| s.length }).to match_array(answer_1)
+    expect(my_group_by(array_1, &:length)).to match_array(answer_1)
 
     answer_2 = { true => %w[mouse dog goat], false => %w[bird cat] }
     expect(my_group_by(array_1) { |s| s.include?('o') }).to match_array(answer_2)

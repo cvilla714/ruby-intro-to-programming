@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Room
   def initialize(capacity)
     @capacity = capacity
@@ -7,7 +9,7 @@ class Room
   attr_reader :capacity, :occupants
 
   def full?
-    !(@occupants.length < @capacity)
+    @occupants.length >= @capacity
   end
 
   def available_space

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/letter_count'
 
 describe 'letter_count' do

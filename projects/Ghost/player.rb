@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Player
   attr_reader :name
 
@@ -7,7 +9,7 @@ class Player
 
   def alert_invalid_move(letter)
     puts "#{letter} is not a valid move!"
-    puts "Your guess must be a letter of the alphabet."
+    puts 'Your guess must be a letter of the alphabet.'
     puts "You must be able to form a word starting with the new fragment.\n"
   end
 
@@ -28,6 +30,6 @@ class Player
 
   def prompt(fragment)
     puts "The current fragment is '#{fragment}'."
-    print "Add a letter: "
+    print 'Add a letter: '
   end
 end

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # No need to change or write any code in this file.
 #
 # After you complete all specs, you can simulate your hotel by
 # running this file with `ruby lib/play_hangman.rb` in your terminal!
 
-require_relative "hangman"
+require_relative 'hangman'
 
 hangman = Hangman.new
 

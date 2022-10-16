@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/problems'
 
 describe 'largest_prime_factor' do

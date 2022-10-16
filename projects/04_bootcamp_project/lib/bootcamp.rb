@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Bootcamp
   def initialize(name, slogan, student_capacity)
     @name = name

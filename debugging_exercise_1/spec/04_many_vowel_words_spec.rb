@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/many_vowel_words'
 
 describe 'many_vowel_words' do

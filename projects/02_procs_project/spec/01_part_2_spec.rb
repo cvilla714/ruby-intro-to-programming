@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require "part_2"
 
 require_relative '../lib/part_2'
@@ -5,23 +7,23 @@ require_relative '../lib/part_2'
 describe 'PART 2' do
   describe 'reverser' do
     it 'should accept a string and a block as args' do
-      expect { reverser('abcd') { |string| string.upcase } }.to_not raise_error
+      expect { reverser('abcd', &:upcase) }.to_not raise_error
     end
 
     it "should return the result of the block when passed the string with it's characters reversed" do
-      expect(reverser('abcd') { |string| string.upcase }).to eq('DCBA')
-      expect(reverser('hello') { |string| string + '!!!' }).to eq('olleh!!!')
+      expect(reverser('abcd', &:upcase)).to eq('DCBA')
+      expect(reverser('hello') { |string| "#{string}!!!" }).to eq('olleh!!!')
     end
   end
 
   describe 'word_changer' do
     it 'should accept a sentence string and a block as args' do
-      expect { word_changer('goodbye moon') { |word| word.upcase + '!' } }.to_not raise_error
+      expect { word_changer('goodbye moon') { |word| "#{word.upcase}!" } }.to_not raise_error
     end
 
     it 'should return a new sentence where every word becomes the result of the block when passed the original word of the sentence' do
-      expect(word_changer('goodbye moon') { |word| word.upcase + '!' }).to eq('GOODBYE! MOON!')
-      expect(word_changer('Hello World') { |word| '..' + word.downcase + '..' }).to eq('..hello.. ..world..')
+      expect(word_changer('goodbye moon') { |word| "#{word.upcase}!" }).to eq('GOODBYE! MOON!')
+      expect(word_changer('Hello World') { |word| "..#{word.downcase}.." }).to eq('..hello.. ..world..')
     end
   end
 
@@ -47,14 +49,14 @@ describe 'PART 2' do
   describe 'and_selector' do
     it 'should accept an array and two procs as args' do
       proc_1 = proc { |n| n.even? }
-      proc_2 = proc { |n| n < 0 }
+      proc_2 = proc { |n| n.negative? }
 
       expect { and_selector([-5, 0, -8, 8, -2], proc_1, proc_2) }.to_not raise_error
     end
 
     it 'should return a new array containing elements of the original array that result in true when passed into both procs' do
       even = proc { |n| n.even? }
-      negative = proc { |n| n < 0 }
+      negative = proc { |n| n.negative? }
 
       expect(and_selector([-5, 0, -8, 8, -2], even, negative)).to eq([-8, -2])
       expect(and_selector([5, 4, 10, 15], even, negative)).to eq([])

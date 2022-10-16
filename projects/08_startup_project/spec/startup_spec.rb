@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative  '../lib/startup'
 require_relative  '../lib/employee'
 

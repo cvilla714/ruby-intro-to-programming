@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Debug this code to pass rspec! There is 1 mistake to fix.
 
 # Write a method, fuzz_buzz, that accepts a number as an arg.
@@ -6,7 +8,7 @@
 require 'byebug'
 
 def fuzz_buzz(num)
-#   debugger
+  #   debugger
   numbers = []
   (1..num).each do |i|
     numbers << i if i % 3 != 0 && i % 5 != 0

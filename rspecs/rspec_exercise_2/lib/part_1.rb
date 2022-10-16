@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def partition(arr, num)
   less = []
   greater = []

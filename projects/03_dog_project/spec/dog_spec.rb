@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require "dog"
 
 require_relative '../lib/dog'

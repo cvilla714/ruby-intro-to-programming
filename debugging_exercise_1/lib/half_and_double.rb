@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Debug this code to pass rspec! There are 1 mistake to fix.
 
 # Write a method, half_and_double, that accepts an array of numbers as an arg.

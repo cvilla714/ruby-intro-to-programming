@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Debug this code to pass rspec! There are 3 mistakes to fix.
 
 # Write a method, letter_count, that accepts a string and char as args.

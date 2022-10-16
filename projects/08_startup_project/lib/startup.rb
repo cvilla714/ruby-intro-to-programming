@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/employee'
 
 class Startup
@@ -11,7 +13,7 @@ class Startup
   end
 
   def valid_title?(title)
-    @salaries.has_key?(title)
+    @salaries.key?(title)
   end
 
   def >(other)
@@ -58,7 +60,7 @@ class Startup
   def acquire(startup)
     @funding += startup.funding
     startup.salaries.each do |title, salary|
-      @salaries[title] = salary unless @salaries.has_key?(title)
+      @salaries[title] = salary unless @salaries.key?(title)
     end
     @employees += startup.employees
     startup.close

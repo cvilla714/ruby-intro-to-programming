@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require "part_1"
 require_relative '../lib/part_1'
 

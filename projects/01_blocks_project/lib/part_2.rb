@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def all_words_capitalized?(words)
   #   words.all?(&:capitalize)
   words.all? { |word| word.capitalize == word }

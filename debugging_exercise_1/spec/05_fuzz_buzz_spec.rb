@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require "fuzz_buzz"
 require_relative '../lib/fuzz_buzz'
 

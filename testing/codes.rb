@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 code = [
   [
     RoomType_id: 97_474,

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 def proper_factors(num)
-  (1...num).select { |i| num % i == 0 }
+  (1...num).select { |i| (num % i).zero? }
 end
 
 def aliquot_sum(num)

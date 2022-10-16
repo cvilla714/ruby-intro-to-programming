@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Debug this code to pass rspec! There are 2 mistakes to fix.
 
 # Write a method, prime?, that accepts a number. It should return a boolean indicating whether or not the given number
@@ -9,7 +11,7 @@ def prime?(num)
   return false if num < 2
 
   (2...num).each do |factor|
-    return false if num % factor == 0
+    return false if (num % factor).zero?
   end
   true
 end

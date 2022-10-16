@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Debug this code to pass rspec! There are 2 mistakes to fix.
 
 # Write a method, many_vowel_words, that accepts a sentence string as an arg.

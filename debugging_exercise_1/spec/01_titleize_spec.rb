@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/titleize'
 
 puts 'Instructions: Debug the files in /lib to pass RSpec'

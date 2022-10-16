@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/guessing_game'
 
 puts "\nNOTE: Once you complete all specs, run `ruby lib/play_guessing_game.rb` in your terminal!"

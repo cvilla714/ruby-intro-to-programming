@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/part_2'
 
 describe 'PART 2' do

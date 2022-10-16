@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def average(numb_1, numb_2)
   (numb_1 + numb_2) / 2.0
 end

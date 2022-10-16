@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def my_map(array, &block)
   #   array.map(&block)
   items = []

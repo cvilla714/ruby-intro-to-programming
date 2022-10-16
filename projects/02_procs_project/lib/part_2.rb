@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def reverser(string, &proc)
   proc.call(string.reverse)
 end

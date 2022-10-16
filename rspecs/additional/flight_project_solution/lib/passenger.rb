@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Passenger
   attr_reader :name
 
@@ -11,8 +13,6 @@ class Passenger
   end
 
   def add_flight(flight_number)
-    if !self.has_flight?(flight_number)
-      @flight_numbers << flight_number.upcase
-    end
+    @flight_numbers << flight_number.upcase unless has_flight?(flight_number)
   end
 end

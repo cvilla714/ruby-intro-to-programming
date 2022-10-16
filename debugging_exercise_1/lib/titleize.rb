@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Debug this code to pass rspec! There are 2 mistakes to fix.
 
 # Write a method, titleize, that accepts a string representing a title
@@ -11,7 +13,7 @@ def titleize(title)
   words = title.split(' ')
 
   titleized_words = words.map.with_index do |word, i|
-    if i == 0 || !little_words.include?(word)
+    if i.zero? || !little_words.include?(word)
       word.capitalize
     else
       word.downcase

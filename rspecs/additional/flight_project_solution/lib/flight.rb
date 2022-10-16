@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Flight
   attr_reader :passengers
 
@@ -12,9 +14,7 @@ class Flight
   end
 
   def board_passenger(passenger)
-    if passenger.has_flight?(@flight_number) && !self.full?
-      @passengers << passenger
-    end
+    @passengers << passenger if passenger.has_flight?(@flight_number) && !full?
   end
 
   def list_passengers
@@ -26,6 +26,6 @@ class Flight
   end
 
   def <<(passenger)
-    self.board_passenger(passenger)
+    board_passenger(passenger)
   end
 end
